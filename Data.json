@@ -1,0 +1,14 @@
+{
+  "chatHistory": [
+    {
+      "sender": "user",
+      "message": "Hello, JTS-01!",
+      "timestamp": "2025-03-26T15:00:00Z"
+    },
+    {
+      "sender": "ai",
+      "message": "Hello! How can I assist you today?",
+      "timestamp": "2025-03-26T15:00:05Z"
+    }
+  ]
+}
