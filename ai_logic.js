@@ -1,29 +1,26 @@
-// This function decides how to generate a response
 async function generateResponse(userMessage) {
-    // Fetch up-to-date information from the web
-    let webData = await fetchWebData(userMessage);
+    userMessage = userMessage.toLowerCase();
 
-    // If web data is useful, return it as the response
-    if (webData) return webData;
-
-    // Default fallback responses
-    let responses = [
-        "I'm still learning! What else can I help with?",
-        "That's an interesting question!",
-        "I'll need a moment to think about that...",
-        "I'm not sure, but I can try to find out!"
-    ];
-    return responses[Math.floor(Math.random() * responses.length)];
-}
-
-// Function to fetch relevant web data (Example: Uses DuckDuckGo API)
-async function fetchWebData(query) {
-    try {
-        let response = await fetch(`https://api.duckduckgo.com/?q=${encodeURIComponent(query)}&format=json`);
-        let data = await response.json();
-        if (data.AbstractText) return data.AbstractText;
-        return null;  // No relevant data found
-    } catch (error) {
-        return null;
+    // Simple AI Logic for response
+    if (userMessage.includes("hello") || userMessage.includes("hi")) {
+        return "Hello! How can I assist you today?";
+    } 
+    else if (userMessage.includes("how are you")) {
+        return "I'm just a bot, but thanks for asking! How about you?";
+    } 
+    else if (userMessage.includes("what is your name")) {
+        return "I am JTS-01, your AI assistant.";
+    } 
+    else if (userMessage.includes("what can you do")) {
+        return "I can chat with you, answer questions, and more! Try asking me something.";
+    } 
+    else if (userMessage.includes("who made you")) {
+        return "I was built by MW AI Group!";
+    } 
+    else if (userMessage.includes("tell me a joke")) {
+        return "Why don’t skeletons fight each other? Because they don’t have the guts!";
+    } 
+    else {
+        return "Hmm... I don't know how to respond to that yet. Try asking something else!";
     }
 }
