@@ -1,2 +1,2 @@
 # JTS-01
-This is a repository for the JTS-01 AI model by MW AI Group
+This repository is being used for the JTS-01 model of the MW AI Group
